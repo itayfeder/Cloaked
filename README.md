@@ -9,3 +9,6 @@ You can also use Curios to place the capes on the back slot. If you do that and 
 
 ## Where do I find capes?
 You can find them in any chest all over the world!
+
+## Can i add new capes?
+Of course! Every mod maker and server owner can add their own capes. All you need is a datapack is a resource pack!
