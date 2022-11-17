@@ -19,12 +19,12 @@ apply plugin: "org.spongepowered.mixin"
 
 
 mixin {
-    add sourceSets.main, "capes.refmap.json"
+    add sourceSets.main, "cloaked.refmap.json"
 }
 
-version = '1.1.2'
-group = 'com.itayfeder.capes' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'capes-1.19.2'
+version = '1.0.0'
+group = 'com.itayfeder.cloaked' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'cloaked-1.19.2'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -53,7 +53,7 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            arg "-mixin.config=capes.mixins.json"
+            arg "-mixin.config=cloaked.mixins.json"
 
             // Recommended logging data for a userdev environment
             // The markers can be added/remove as needed separated by commas.
@@ -68,11 +68,11 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'capes'
+            property 'forge.enabledGameTestNamespaces', 'cloaked'
 
 
             mods {
-                capes {
+                cloaked {
                     source sourceSets.main
                 }
             }
@@ -80,16 +80,16 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-            arg "-mixin.config=capes.mixins.json"
+            arg "-mixin.config=cloaked.mixins.json"
 
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'capes'
+            property 'forge.enabledGameTestNamespaces', 'cloaked'
 
             mods {
-                capes {
+                cloaked {
                     source sourceSets.main
                 }
             }
@@ -105,10 +105,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'capes'
+            property 'forge.enabledGameTestNamespaces', 'cloaked'
 
             mods {
-                capes {
+                cloaked {
                     source sourceSets.main
                 }
             }
@@ -122,10 +122,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'capes', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'cloaked', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                capes {
+                cloaked {
                     source sourceSets.main
                 }
             }
@@ -173,14 +173,14 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "capes",
+                "Specification-Title"     : "cloaked",
                 "Specification-Vendor"    : "feder",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "feder",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs"            : "capes.mixins.json"
+                "MixinConfigs"            : "cloaked.mixins.json"
         ])
     }
 }
