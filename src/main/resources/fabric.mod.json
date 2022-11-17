@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "cloaked",
+  "version": "${version}",
+
+  "name": "Cloaked",
+  "description": "Add various cape variations you can find in your world, and a way to add your own!",
+  "authors": [
+    "Itayfeder"
+  ],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "assets/cloaked/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.itayfeder.cloaked.client.CloakedClient"
+    ],
+    "main": [
+      "com.itayfeder.cloaked.Cloaked"
+    ]
+  },
+
+          "mixins": [
+        "cloaked.mixins.json"
+      ],
+    
+  "depends": {
+    "fabricloader": ">=0.14.10",
+              "fabric": "*",
+          "minecraft": "1.19.2"
+  }
+}
